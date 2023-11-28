@@ -1,0 +1,25 @@
+{
+  "name": "js-crime-data",
+  "version": "1.0.0",
+  "description": "UK Police API data displayed using Google Maps API",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jklxco/js-crime-data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jklxco/js-crime-data/issues"
+  },
+  "homepage": "https://github.com/jklxco/js-crime-data#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2"
+  }
+}

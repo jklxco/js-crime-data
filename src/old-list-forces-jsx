@@ -1,0 +1,31 @@
+import { useEffect, useState } from "react"
+
+export default function ListForces(){
+
+    /* If a request succeeds, the API will return a 200 status code.
+        If a request fails, the API will return a non-200 status code.*/
+
+    const [paraURL, setParaURL] = useState([]);
+
+    useEffect(()=> {
+        fetch("https://data.police.uk/api/forces", {mode: 'cors'})
+        .then((response) => response.json())
+        .then((response) => setParaURL(response))
+        .catch((error) => console.error(error));
+    }, []);
+
+    return (
+        <>
+            <table>
+                <caption>List of UK Forces</caption>
+                <thead>
+                    <th>Force Name</th>
+                </thead>
+                
+                <tbody>
+                    {paraURL.map(item => <tr key={item.id}><td>{item.name}</td></tr>)}
+                </tbody>
+            </table>
+        </>
+    )
+}
