@@ -2,7 +2,7 @@
   "name": "js-crime-data",
   "version": "1.0.0",
   "description": "UK Police API data displayed using Google Maps API",
-  "main": "script.js",
+  "main": "scripts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jklxco/js-crime-data#readme",
   "devDependencies": {
+    "@googlemaps/markerclusterer": "^2.5.1",
     "tailwindcss": "^3.3.5"
   },
   "dependencies": {
