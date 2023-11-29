@@ -1,4 +1,5 @@
 import displayCrimesOnMap from "./get-crime-data.js";
+import createCrimeCard from "./list-crime-data.js";
 
 let map, infoWindow;
 
@@ -68,6 +69,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function updateMapCenter(pos) {
   map.setCenter(pos)
+  
 }
 
 function initAutocomplete() {
