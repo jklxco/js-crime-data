@@ -1,53 +1,20 @@
-const crimeContainer = document.querySelector('#crime-data-container');
+function createCrimeSummary(crimesArray){
 
-
-
-function createCrimeTable(crimesArray){
-
-    console.log(crimesArray)
+    let counts = {};
+    crimesArray.forEach(el => counts[el.category] = 1  + (counts[el.category] || 0))
     const tableBody = document.querySelector('#crime-table-body');
     tableBody.replaceChildren()
-    
-    
-
-    for (let i = 0; i < 20/*crimesArray.length*/; i++) {
+    for (const property in counts) { 
         const tableRow = document.createElement('tr');
         tableRow.classList.add('crime-row')
-        let crimeObj = {
-            category: crimesArray[i].category,
-            location: crimesArray[i].location.street.name,
-            outcome: crimesArray[i].outcome_status,
-        };
-
-        for (const property in crimeObj) {
-            const tableCell = document.createElement('td');
-            (crimeObj[property] === null) ?
-                tableCell.textContent = 'Ongoing' :
-                tableCell.textContent = crimeObj[property];
-            tableCell.classList.add('crime-cell')
-            tableRow.appendChild(tableCell);
-        }
-        
+        const tableCell = document.createElement('td');
+        tableCell.textContent = property
+        tableRow.appendChild(tableCell);
+        const tableCell2 = document.createElement('td');
+        tableCell2.textContent = counts[property]
+        tableRow.appendChild(tableCell2);
         tableBody.appendChild(tableRow);
-    }
-}
+    };
+};
 
-function addTableHeaders(table){
-
-    const thead = document.createElement('thead');
-    const tRow = document.createElement('tr');
-    let td = document.createElement('td');
-    td.innerText = 'Category'
-    tRow.appendChild(td)
-    td = document.createElement('td');
-    td.innerText = 'Location'
-    tRow.appendChild(td)
-    td = document.createElement('td');
-    td.innerText = 'Outcome'
-    tRow.appendChild(td)
-    thead.appendChild(tRow);
-    table.appendChild(thead)
-
-}
-
-export default createCrimeTable
+export default createCrimeSummary

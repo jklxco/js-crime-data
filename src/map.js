@@ -1,5 +1,4 @@
 import displayCrimesOnMap from "./get-crime-data.js";
-import createCrimeCard from "./list-crime-data.js";
 
 let map, infoWindow;
 
@@ -44,7 +43,7 @@ async function initMap() {
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
           infoWindow.open(map);
-          map.setCenter(pos);
+          map.panTo(pos);
         },
         () => {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -68,7 +67,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function updateMapCenter(pos) {
-  map.setCenter(pos)
+  map.panTo(pos)
   
 }
 

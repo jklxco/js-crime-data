@@ -1,20 +1,14 @@
-import createCrimeTable from "./list-crime-data.js"
+import createCrimeSummary from "./list-crime-data.js"
+
+let markers = [];
+let markerCluster = 0;
 
 async function getCrimeData(lat, lng){
     const date = '2023-09'
-    const url = `https://data.police.uk/api/crimes-at-location?date=${date}&lat=${lat}&lng=${lng}`
-    const url2 = `https://data.police.uk/api/crimes-street/all-crime?lat=${lat}&lng=${lng}&date=${date}`
-    
-    const response = await fetch(url2, {mode: 'cors'})
+    const url = `https://data.police.uk/api/crimes-street/all-crime?lat=${lat}&lng=${lng}&date=${date}`
+    const response = await fetch(url, {mode: 'cors'})
     const crimes = await response.json();
-
     return crimes 
-
-    const crimeLngLatArray = crimes.map((item) => {
-        return {lat: parseFloat(item.location.latitude), lng: parseFloat(item.location.longitude)}
-    } )
-    console.log(crimes)
-    return crimeLngLatArray;
 
 }
 
@@ -26,8 +20,13 @@ async function displayCrimesOnMap(lat, lng, map){
     const {AdvancedMarkerElement, PinElement} = await google.maps.importLibrary("marker")
   
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    const markers = crimeLngLatArray.map((position, i) => {
+    
+    if (markerCluster !== 0) {
+        console.log(markerCluster)
+        markerCluster.setMap(null)
+    }
+    
+    markers = crimeLngLatArray.map((position, i) => {
         //const label = labels[i % labels.length];
         const pinGlyph = new google.maps.marker.PinElement({
             //glyph: label,
@@ -42,10 +41,10 @@ async function displayCrimesOnMap(lat, lng, map){
     });
 
     let algorithm = new markerClusterer.GridAlgorithm({gridSize: 45});
-    
-    new markerClusterer.MarkerClusterer({ markers, map, algorithm });
+    markerCluster = new markerClusterer.MarkerClusterer({ markers, map, algorithm });
 
-    createCrimeTable(crimes)
+    createCrimeSummary(crimes)
 }
+  
 
 export default displayCrimesOnMap
