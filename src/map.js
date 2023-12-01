@@ -17,14 +17,14 @@ async function initMap() {
   map = new Map(document.getElementById("map"), {
     center: { lat: 52.477754, lng: -1.898958 },
     zoom: 14,
-    mapId: "CRIME_MAP_ID",
+    mapId: "2ae1ed055a4c88d8",
     options: options,
   });
 
   // ON LOAD
   const [lat, lng] = [52.477754, -1.898958]
-  displayCrimesOnMap(lat, lng, map);
   initAutocomplete()
+  searchAreaBtn()
 
   let infoWindow = new google.maps.InfoWindow();
 
@@ -88,6 +88,18 @@ function initAutocomplete() {
   } )
 }
 
+function searchAreaBtn(){
+
+  const searchBtn = document.querySelector('#search-btn');
+  searchBtn.addEventListener('click', () => {
+    console.log('searching...')
+    const currentPos = map.getCenter();
+    console.log(currentPos)
+    displayCrimesOnMap(currentPos.lat(), currentPos.lng(), map)
+  })
+  
+
+}
 
 
 export {initMap};

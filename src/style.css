@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.crime-cell {
-    @apply border-2 border-black ;
+.crime-row {
+    @apply p-2 text-right;
+}
+
+.crime-row td:first-child {
+    @apply text-left pl-2;
+
+}
+
+.crime-row td {
+    @apply pr-2 text-gray-700
+}
+
+.btn {
+    @apply  px-2 py-3 rounded-md mt-2 ml-2 float-right
 }
