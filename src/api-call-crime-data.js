@@ -1,4 +1,4 @@
-import createCrimeSummary from "./list-crime-data.js"
+import createCrimeSummary from "./crime-summary.js"
 
 let markers = [];
 let markerCluster = 0;
@@ -21,8 +21,8 @@ async function displayCrimesOnMap(lat, lng, map){
   
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
+    // Remove existing markers
     if (markerCluster !== 0) {
-        console.log(markerCluster)
         markerCluster.setMap(null)
     }
     

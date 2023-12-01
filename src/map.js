@@ -1,4 +1,4 @@
-import displayCrimesOnMap from "./get-crime-data.js";
+import displayCrimesOnMap from "./api-call-crime-data.js";
 
 let map, infoWindow;
 
