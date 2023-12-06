@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>Your Page Title</title>
+</head>
+
+<body class="bg-gray-100 font-body">
+
+    <nav class="flex justify-between items-center h-[10vh] max-w-[800px] m-auto">
+        <div>
+            <img src="" alt="">
+            <p class="text-3xl font-bold uppercase text-blue-900">Crime Data UK</p>
+        </div>
+        <ul class="text-lg">
+            <li class="inline list-none text-gray-500 p-2 hover:underline hover:underline-offset-8"><a href="./home.html">HOME</a></li>
+            <li class="inline list-none text-gray-500 p-2 hover:underline hover:underline-offset-8 "><a href="./index.html">MAP</a></li>
+            <li class="inline list-none text-gray-500 p-2 pb-1 border-b-2 border-blue-900"><a href="./contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="max-w-[800px] m-auto mt-8">
+        <form class="bg-white p-6 rounded-xl shadow-md">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="mb-4">
+                    <label for="first_name" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" class="border-2 border-gray-300 p-2 w-full rounded focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="surname" class="block text-gray-700 text-sm font-bold mb-2">Surname:</label>
+                    <input type="text" id="surname" name="surname" class="border-2 border-gray-300 p-2 w-full rounded focus:outline-none focus:border-blue-500">
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                <input type="email" id="email" name="email" class="border-2 border-gray-300 p-2 w-full rounded focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="telephone" class="block text-gray-700 text-sm font-bold mb-2">Telephone:</label>
+                <input type="tel" id="telephone" name="telephone" class="border-2 border-gray-300 p-2 w-full rounded focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                <textarea id="message" name="message" rows="4" class="border-2 border-gray-300 p-2 w-full rounded focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-900 text-white py-2 px-4 rounded mx-auto block hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue">Submit</button>
+        </form>
+    </div>
+
+
+    <script>
+        // JavaScript code for handling responsive menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

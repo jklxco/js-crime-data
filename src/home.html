@@ -6,7 +6,7 @@
     <title>Crime Data</title>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
-<body class="font-body">
+<body class="font-body bg-gray-100">
     <nav class="flex justify-between items-center h-[10vh] max-w-[800px] m-auto">
         <div>
             <img src="" alt="">
@@ -15,17 +15,20 @@
         <ul class="text-lg ">
             <li class="inline list-none text-gray-500 p-2 pb-1 border-b-2 border-blue-900"><a href="./home.html">HOME</a></li>
             <li class="inline list-none text-gray-500 p-2 hover:underline hover:underline-offset-8"><a href="./index.html">MAP</a></li>
-            <li class="inline list-none text-gray-500 p-2 hover:underline hover:underline-offset-8"><a href="/">ABOUT</a></li>
+            <li class="inline list-none text-gray-500 p-2 hover:underline hover:underline-offset-8"><a href="./contact.html">CONTACT</a></li>
         </ul>
     </nav>
-    <section id="intro-container" class="py-36" style="background-image: url(./assets/uk-map-zoomed.jpg);">
-        <div class="bg-blue-900/90 rounded-lg p-4 py-12">
+    <section id="intro-container" class="h-[90vh] bg-cover relative " style="background-image: url(./assets/uk-map-zoomed.jpg);">
+        <div class="bg-blue-900/90 w-screen px-4 py-20 pb-36 absolute top-1/2 -translate-y-1/2 flex-col items-center">
             <p class="font-bold text-white text-6xl text-center">Explore Your Neighborhood's Safety</p>
-            <p class="text-blue-100 mt-8 text-xl w-[800px] m-auto text-center  ">Welcome to Crime Data, where you can gain valuable insights into the safety of your neighborhood. Our innovative platform combines the power of Google Maps with crime data from the UK Police API, allowing you to visualize and understand the safety landscape within a 1-mile radius of your chosen location.</p>
+            <p class="text-blue-100 mt-8 text-xl max-w-[800px] m-auto text-center">Welcome to Crime Data, where you can gain valuable insights into the safety of your neighborhood. Our innovative platform combines the power of Google Maps with crime data from the UK Police API, allowing you to visualize and understand the safety landscape within a 1-mile radius of your chosen location.</p>
+            <a href="index.html" class="border-white uppercase mt-8 border-2 rounded-lg text-white px-2 py-2 font-bold absolute left-1/2 -translate-x-1/2 hover:bg-white hover:text-blue-900">SEARCH MAP</a>
+            
         </div>
     </section>
 
-        <section id="features-container" class="mt-40 w-[800px] m-auto text-center">
+    <!--
+            <section id="features-container" class="mt-40 w-[800px] m-auto text-center">
             <h2 class="font-bold text-xl">Key Features:</h2>
             <div id="feature">
                 <h3 class="font-bold text-lg">Interactive Crime Mapping:</h3>
@@ -48,7 +51,7 @@
                 <p class="text-gray-700">Join our community discussions to share experiences, report concerns, and engage with neighbors. Together, we can work towards creating safer and more secure neighborhoods.</p>
             </div>
         </section>
-    
+    -->
     <!--
         How It Works:
         Search Your Location:
